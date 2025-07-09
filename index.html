@@ -612,7 +612,7 @@
     /* Skills Section */
     .skills-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
       max-width: 1000px;
       margin: 40px auto;
@@ -658,18 +658,20 @@
       margin-right: 15px;
     }
 
-    .skill-icon img {
-      width: 24px;
-      height: 24px;
+    .skill-icon i {
+      font-size: 20px;
+      color: var(--accent-color);
     }
 
     .skill-name {
       flex: 1;
+      font-size: 16px;
     }
 
     .skill-percent {
       font-weight: bold;
       color: var(--accent-color);
+      font-size: 14px;
     }
 
     .progress-bar {
@@ -690,6 +692,7 @@
       font-size: 12px;
       color: var(--text-tertiary);
       margin-top: 5px;
+      line-height: 1.4;
     }
 
     /* Experience Section */
@@ -1329,8 +1332,8 @@
           <img src="img/Algorithms for dna sequencing.jpg" alt="Algorithms For DNA Sequencing" loading="lazy">
           <div class="cert-title">Algorithms For DNA Sequencing</div>
           <div class="cert-grade">Grade: 98%</div>
-
-          
+        </div>
+        
         <!-- Certificate 10 -->
         <div class="certificate-item" data-cert-id="10" data-cert="sql">
           <img src="img/sql for data science_page-0001.jpg" alt="SQL For Data Science" loading="lazy">
@@ -1350,7 +1353,7 @@
           <div class="skill-item" data-skill-id="1">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                <i class="fab fa-python"></i>
               </div>
               <div class="skill-name">Python</div>
               <div class="skill-percent">85%</div>
@@ -1364,7 +1367,7 @@
           <div class="skill-item" data-skill-id="2">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C">
+                <i class="fas fa-c"></i>
               </div>
               <div class="skill-name">C</div>
               <div class="skill-percent">85%</div>
@@ -1378,7 +1381,7 @@
           <div class="skill-item" data-skill-id="3">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                <i class="fab fa-html5"></i>
               </div>
               <div class="skill-name">HTML</div>
               <div class="skill-percent">45%</div>
@@ -1392,7 +1395,7 @@
           <div class="skill-item" data-skill-id="4">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                <i class="fab fa-css3-alt"></i>
               </div>
               <div class="skill-name">CSS</div>
               <div class="skill-percent">45%</div>
@@ -1406,7 +1409,7 @@
           <div class="skill-item" data-skill-id="5">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                <i class="fab fa-js"></i>
               </div>
               <div class="skill-name">JavaScript</div>
               <div class="skill-percent">45%</div>
@@ -1425,7 +1428,7 @@
           <div class="skill-item" data-skill-id="6">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+                <i class="fas fa-database"></i>
               </div>
               <div class="skill-name">MongoDB</div>
               <div class="skill-percent">80%</div>
@@ -1439,7 +1442,7 @@
           <div class="skill-item" data-skill-id="7">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                <i class="fas fa-database"></i>
               </div>
               <div class="skill-name">SQL</div>
               <div class="skill-percent">90%</div>
@@ -1453,7 +1456,7 @@
           <div class="skill-item" data-skill-id="8">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="No-SQL">
+                <i class="fas fa-database"></i>
               </div>
               <div class="skill-name">No-SQL</div>
               <div class="skill-percent">85%</div>
@@ -1472,7 +1475,7 @@
           <div class="skill-item" data-skill-id="9">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Apache Spark">
+                <i class="fas fa-fire"></i>
               </div>
               <div class="skill-name">Apache Spark</div>
               <div class="skill-percent">85%</div>
@@ -1486,7 +1489,7 @@
           <div class="skill-item" data-skill-id="10">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg" alt="Power BI">
+                <i class="fas fa-chart-line"></i>
               </div>
               <div class="skill-name">Power BI</div>
               <div class="skill-percent">87%</div>
@@ -1569,9 +1572,9 @@
       
       <div class="footer-col">
         <h4>Follow Me</h4>
-        <a href="https://github.com/yourusername" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://twitter.com/yourusername" target="_blank" class="social-link"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://github.com/Devil-nkp" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/naveenkumar-a1iim/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.coursera.org/user/863aab5b5ab097791312f2805c56c65d" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Coursera</a>
       </div>
     </div>
     
@@ -1675,6 +1678,19 @@
           // Add active class to clicked button and corresponding content
           this.classList.add('active');
           document.getElementById(`${tabId}-tab`).classList.add('active');
+          
+          // Animate skill bars when skills tab is opened
+          if (tabId === 'skills') {
+            setTimeout(() => {
+              document.querySelectorAll('.progress-fill').forEach(fill => {
+                const width = fill.style.width;
+                fill.style.width = '0';
+                setTimeout(() => {
+                  fill.style.width = width;
+                }, 100);
+              });
+            }, 500);
+          }
         });
       });
       
@@ -1838,34 +1854,34 @@
         1: {
           title: "NeuroGenix AI",
           description: "Genetic Sequence Analyzer that uses machine learning to identify patterns in genomic data. This project involved processing large genomic datasets and applying machine learning algorithms to identify genetic markers for diseases.",
-          image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          image: "img/Screenshot 2025-06-30 222532.png",
           tags: ["Python", "Machine Learning", "Bioinformatics"],
-          demoUrl: "https://github.com/yourusername/neurogenix-ai",
-          codeUrl: "https://github.com/yourusername/neurogenix-ai"
+          demoUrl: "https://devil-nkp.github.io/NureoGenix-/",
+          codeUrl: "https://github.com/Devil-nkp/NureoGenix-"
         },
         2: {
           title: "Briefeek AI",
           description: "Personalized News Aggregator that curates content based on user preferences using NLP. The system analyzes reading habits and preferences to deliver tailored news feeds with sentiment analysis.",
-          image: "https://images.unsplash.com/photo-1581092921461-39b2f2f8a7c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          image: "img/Screenshot 2025-06-30 222809.png",
           tags: ["Python", "NLP", "Web Scraping"],
-          demoUrl: "https://github.com/yourusername/briefeek-ai",
-          codeUrl: "https://github.com/yourusername/briefeek-ai"
+          demoUrl: "https://devil-nkp.github.io/BRIEFEEK-AI/",
+          codeUrl: "https://github.com/Devil-nkp/BRIEFEEK-AI"
         },
         3: {
           title: "HireGuard AI",
           description: "Fraudulent Job Posting Detector that analyzes job listings for potential scams. Uses natural language processing to identify suspicious patterns in job descriptions and company profiles.",
-          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          image: "img/Screenshot 2025-06-30 222937.png",
           tags: ["Python", "Machine Learning", "NLP"],
-          demoUrl: "https://github.com/yourusername/hireguard-ai",
-          codeUrl: "https://github.com/yourusername/hireguard-ai"
+          demoUrl: "https://devil-nkp.github.io/HIGHER-GUARD-AI/",
+          codeUrl: "https://github.com/Devil-nkp/HIGHER-GUARD-AI"
         },
         4: {
           title: "FeelFrame AI",
           description: "Text to Video Generator that creates engaging videos from written content. This project uses NLP to analyze text sentiment and generates appropriate visual content with matching music.",
-          image: "https://images.unsplash.com/photo-1574717024453-3545e7cc3e0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+          image: "img/Screenshot 2025-06-30 223054.png",
           tags: ["Python", "Computer Vision", "NLP"],
-          demoUrl: "https://github.com/yourusername/feelframe-ai",
-          codeUrl: "https://github.com/yourusername/feelframe-ai"
+          demoUrl: "https://devil-nkp.github.io/FEEL-FRAME/",
+          codeUrl: "https://github.com/Devil-nkp/FEEL-FRAME"
         }
       };
       
@@ -1930,20 +1946,6 @@
           toast.classList.remove('show');
         }, 3000);
       }
-      
-      // Animate skill bars on tab change
-      const skillsTabBtn = document.querySelector('.tab-btn[data-tab="skills"]');
-      skillsTabBtn.addEventListener('click', function() {
-        setTimeout(() => {
-          document.querySelectorAll('.progress-fill').forEach(fill => {
-            const width = fill.style.width;
-            fill.style.width = '0';
-            setTimeout(() => {
-              fill.style.width = width;
-            }, 100);
-          });
-        }, 500);
-      });
     });
   </script>
 </body>
