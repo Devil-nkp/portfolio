@@ -750,6 +750,143 @@
       margin-bottom: 8px;
     }
 
+    /* Dashboard Section */
+    .dashboard-section {
+      padding: 80px 20px;
+      background: rgba(10, 15, 44, 0.7);
+      text-align: center;
+    }
+
+    .dashboard-tabs {
+      margin: 30px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dashboard-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 10px 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-tab.active {
+      background: linear-gradient(90deg, #6c63ff, #fc466b);
+      color: var(--text-primary);
+      box-shadow: 0 0 15px rgba(252, 70, 107, 0.5);
+      border: 1px solid transparent;
+    }
+
+    .dashboard-tab:not(.active):hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-content {
+      display: none;
+      margin-top: 40px;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .dashboard-content.active {
+      display: block;
+    }
+
+    .dashboard-category {
+      margin-bottom: 50px;
+    }
+
+    .dashboard-category h3 {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .dashboard-subtabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    .dashboard-subtab {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 8px 20px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      border-radius: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-subtab.active {
+      background: rgba(247, 37, 133, 0.2);
+      color: var(--text-primary);
+      border: 1px solid var(--accent-color);
+    }
+
+    .dashboard-subtab:not(.active):hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .dashboard-item {
+      background: rgba(26, 26, 46, 0.7);
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .dashboard-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(247, 37, 133, 0.3);
+    }
+
+    .dashboard-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .dashboard-item video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .dashboard-content {
+      padding: 20px;
+    }
+
+    .dashboard-content h4 {
+      margin-bottom: 10px;
+      color: var(--text-primary);
+    }
+
+    .dashboard-content p {
+      color: var(--text-secondary);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
     /* Footer */
     footer {
       background: #050517;
@@ -1004,7 +1141,7 @@
         height: 250px;
       }
       
-      .portfolio-grid, .certificate-grid {
+      .portfolio-grid, .certificate-grid, .dashboard-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       }
     }
@@ -1051,7 +1188,7 @@
         padding: 150px 20px 80px;
       }
       
-      .showcase, .experience-section {
+      .showcase, .experience-section, .dashboard-section {
         padding: 60px 20px;
       }
       
@@ -1067,6 +1204,11 @@
 
       .project-modal-links {
         flex-direction: column;
+      }
+
+      .dashboard-tabs {
+        flex-direction: column;
+        align-items: center;
       }
     }
     
@@ -1084,13 +1226,13 @@
         height: 200px;
       }
       
-      .tab-btn {
+      .tab-btn, .dashboard-tab {
         padding: 8px 15px;
         font-size: 0.9rem;
         margin: 0 5px;
       }
       
-      .portfolio-grid, .certificate-grid {
+      .portfolio-grid, .certificate-grid, .dashboard-grid {
         grid-template-columns: 1fr;
       }
       
@@ -1131,6 +1273,7 @@
     <nav id="nav-links">
       <a href="#home" class="nav-link">Home</a>
       <a href="#portfolio" class="nav-link">Portfolio</a>
+      <a href="#dashboards" class="nav-link">Dashboards</a>
       <a href="#experience" class="nav-link">Experience</a>
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
@@ -1556,6 +1699,186 @@
     </div>
   </section>
 
+  <!-- Dashboards Section -->
+  <section class="dashboard-section" id="dashboards">
+    <h2 class="section-title">Dashboard Projects</h2>
+    <p class="section-description">Explore my data visualization projects showcasing my expertise in transforming raw data into meaningful insights.</p>
+    
+    <div class="dashboard-tabs">
+      <button class="dashboard-tab active" data-dashboard="excel">Excel Dashboards</button>
+      <button class="dashboard-tab" data-dashboard="powerbi">Power BI Dashboards</button>
+      <button class="dashboard-tab" data-dashboard="tableau">Tableau Dashboards</button>
+    </div>
+    
+    <!-- Excel Dashboards -->
+    <div class="dashboard-content active" id="excel-dashboards">
+      <div class="dashboard-category">
+        <h3>Excel Dashboards</h3>
+        
+        <div class="dashboard-subtabs">
+          <button class="dashboard-subtab active" data-subtab="excel-basic">Basic</button>
+          <button class="dashboard-subtab" data-subtab="excel-advanced">Advanced</button>
+        </div>
+        
+        <!-- Basic Excel Dashboards -->
+        <div class="dashboard-grid" id="excel-basic-dashboards">
+          <div class="dashboard-item">
+            <img src="img/excel-basic-1.jpg" alt="Basic Excel Dashboard 1">
+            <div class="dashboard-content">
+              <h4>Sales Performance Dashboard</h4>
+              <p>A basic Excel dashboard tracking sales performance metrics with interactive filters.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <img src="img/excel-basic-2.jpg" alt="Basic Excel Dashboard 2">
+            <div class="dashboard-content">
+              <h4>Inventory Management</h4>
+              <p>Simple inventory tracking dashboard with stock levels and reorder alerts.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Advanced Excel Dashboards -->
+        <div class="dashboard-grid" id="excel-advanced-dashboards" style="display: none;">
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/excel-advanced-1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>Financial Analytics Dashboard</h4>
+              <p>Advanced financial dashboard with dynamic charts, pivot tables, and macros for automated reporting.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/excel-advanced-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>HR Analytics Dashboard</h4>
+              <p>Comprehensive HR dashboard tracking employee performance, attrition, and recruitment metrics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Power BI Dashboards -->
+    <div class="dashboard-content" id="powerbi-dashboards">
+      <div class="dashboard-category">
+        <h3>Power BI Dashboards</h3>
+        
+        <div class="dashboard-subtabs">
+          <button class="dashboard-subtab active" data-subtab="powerbi-basic">Basic</button>
+          <button class="dashboard-subtab" data-subtab="powerbi-advanced">Advanced</button>
+        </div>
+        
+        <!-- Basic Power BI Dashboards -->
+        <div class="dashboard-grid" id="powerbi-basic-dashboards">
+          <div class="dashboard-item">
+            <img src="img/powerbi-basic-1.jpg" alt="Basic Power BI Dashboard 1">
+            <div class="dashboard-content">
+              <h4>Retail Sales Overview</h4>
+              <p>Basic Power BI dashboard showing retail sales trends by region and product category.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <img src="img/powerbi-basic-2.jpg" alt="Basic Power BI Dashboard 2">
+            <div class="dashboard-content">
+              <h4>Customer Segmentation</h4>
+              <p>Simple customer segmentation analysis with demographic filters.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Advanced Power BI Dashboards -->
+        <div class="dashboard-grid" id="powerbi-advanced-dashboards" style="display: none;">
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/powerbi-advanced-1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>Supply Chain Analytics</h4>
+              <p>Advanced Power BI dashboard with real-time supply chain metrics, predictive analytics, and drill-down capabilities.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/powerbi-advanced-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>Healthcare Analytics</h4>
+              <p>Comprehensive healthcare dashboard with patient flow analysis, treatment outcomes, and resource utilization.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Tableau Dashboards -->
+    <div class="dashboard-content" id="tableau-dashboards">
+      <div class="dashboard-category">
+        <h3>Tableau Dashboards</h3>
+        
+        <div class="dashboard-subtabs">
+          <button class="dashboard-subtab active" data-subtab="tableau-basic">Basic</button>
+          <button class="dashboard-subtab" data-subtab="tableau-advanced">Advanced</button>
+        </div>
+        
+        <!-- Basic Tableau Dashboards -->
+        <div class="dashboard-grid" id="tableau-basic-dashboards">
+          <div class="dashboard-item">
+            <img src="img/tableau-basic-1.jpg" alt="Basic Tableau Dashboard 1">
+            <div class="dashboard-content">
+              <h4>Marketing Campaign Analysis</h4>
+              <p>Basic Tableau dashboard analyzing marketing campaign performance across channels.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <img src="img/tableau-basic-2.jpg" alt="Basic Tableau Dashboard 2">
+            <div class="dashboard-content">
+              <h4>Website Analytics</h4>
+              <p>Simple dashboard tracking website traffic, bounce rates, and conversion metrics.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Advanced Tableau Dashboards -->
+        <div class="dashboard-grid" id="tableau-advanced-dashboards" style="display: none;">
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/tableau-advanced-1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>Financial Risk Analysis</h4>
+              <p>Advanced Tableau dashboard with risk scoring models, scenario analysis, and interactive what-if simulations.</p>
+            </div>
+          </div>
+          
+          <div class="dashboard-item">
+            <video controls>
+              <source src="img/tableau-advanced-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="dashboard-content">
+              <h4>IoT Sensor Analytics</h4>
+              <p>Real-time IoT dashboard monitoring sensor data with anomaly detection and alerting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Experience Section -->
   <section class="experience-section" id="experience">
     <h2 class="section-title">Professional Experience</h2>
@@ -1618,6 +1941,7 @@
         <h4>Quick Links</h4>
         <a href="#home" class="footer-link">Home</a>
         <a href="#portfolio" class="footer-link">Portfolio</a>
+        <a href="#dashboards" class="footer-link">Dashboards</a>
         <a href="#experience" class="footer-link">Experience</a>
         <a href="#contact" class="footer-link">Contact</a>
       </div>
@@ -1746,6 +2070,68 @@
         });
       });
       
+      // Dashboard tab functionality
+      const dashboardTabs = document.querySelectorAll('.dashboard-tab');
+      const dashboardContents = document.querySelectorAll('.dashboard-content');
+      
+      dashboardTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const dashboardId = this.getAttribute('data-dashboard');
+          
+          // Remove active class from all buttons and contents
+          dashboardTabs.forEach(tab => tab.classList.remove('active'));
+          dashboardContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and corresponding content
+          this.classList.add('active');
+          document.getElementById(`${dashboardId}-dashboards`).classList.add('active');
+          
+          // Reset subtabs to show basic content by default
+          const subtabs = document.querySelectorAll('.dashboard-subtab');
+          subtabs.forEach(subtab => {
+            if (subtab.getAttribute('data-subtab').includes('basic')) {
+              subtab.classList.add('active');
+            } else {
+              subtab.classList.remove('active');
+            }
+          });
+          
+          const subtabContents = document.querySelectorAll('[id$="-dashboards"]');
+          subtabContents.forEach(content => {
+            if (content.id.includes('basic')) {
+              content.style.display = 'grid';
+            } else {
+              content.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Dashboard subtab functionality
+      document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('dashboard-subtab')) {
+          const subtab = e.target;
+          const subtabType = subtab.getAttribute('data-subtab');
+          const dashboardType = subtabType.split('-')[0];
+          
+          // Remove active class from all subtabs in this category
+          document.querySelectorAll(`[data-subtab^="${dashboardType}-"]`).forEach(tab => {
+            tab.classList.remove('active');
+          });
+          
+          // Add active class to clicked subtab
+          subtab.classList.add('active');
+          
+          // Hide all dashboard grids in this category
+          document.querySelectorAll(`[id^="${dashboardType}-"]`).forEach(content => {
+            content.style.display = 'none';
+          });
+          
+          // Show the selected dashboard grid
+          document.getElementById(`${subtabType}-dashboards`).style.display = 'grid';
+        }
+      });
+      
       // Certificate viewer functionality
       const certificateViewer = document.getElementById('certificate-viewer');
       const closeViewer = document.getElementById('close-viewer');
@@ -1817,37 +2203,37 @@
         },
         12: {
           title: "Mongo DB Basics For Students",
-          image: "img/Mongo db basics for students_page-0001.jpg"
+          image: "img/Mongo db basics for students_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         13: {
-          title: ">Mongo DB Data Modeling Intro",
-          image: "img/Mongo db data modeling intro_page-0001.jpg"
+          title: "Mongo DB Data Modeling Intro",
+          image: "img/Mongo db data modeling intro_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         14: {
           title: "Connecting To a Mongo Db DataBase",
-          image: "img/Connecting to a mongo db database_page-0001.jpg"
-          sskills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
+          image: "img/Connecting to a mongo db database_page-0001.jpg",
+          skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         15: {
           title: "Mongo DB and the Document Model",
-          image: "img/Mongo DB and the Document Model_page-0001.jpg"
+          image: "img/Mongo DB and the Document Model_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         16: {
           title: "C Programming For College Students",
-          image: "img/c certificate_page-0001.jpg"
+          image: "img/c certificate_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         17: {
           title: "ChatGpt and AI Tools Workshop",
-          image: "img/Certificate_page-0001.jpg"
+          image: "img/Certificate_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         18: {
           title: "Mongo DB ATLAS",
-          image: "img/mongo db atlas_page-0001.jpg"
+          image: "img/mongo db atlas_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         }
       };
