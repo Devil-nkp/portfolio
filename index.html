@@ -3,13 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="AI & Data Science Portfolio of Naveen Kumar G">
   <meta name="keywords" content="AI, Data Science, Machine Learning, Portfolio">
   <meta name="author" content="Naveen kumar G">
   <title>AI & Data Science Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* Wavy Background Styles */
+    .wavy-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .wavy-background svg {
+      position: absolute;
+      inset: 0;
+      width: 200%;
+      height: 200%;
+      transform: translate(-25%, -25%);
+    }
+    
+    .wave {
+      fill: none;
+      stroke-width: 40;
+      stroke-linecap: round;
+      opacity: 0.8;
+      animation: move 12s linear infinite;
+    }
+    
+    .wave1 {
+      stroke: rgba(67, 97, 238, 0.1);
+      animation-duration: 18s;
+    }
+    
+    .wave2 {
+      stroke: rgba(58, 12, 163, 0.08);
+      animation-duration: 22s;
+      animation-direction: reverse;
+    }
+    
+    .wave3 {
+      stroke: rgba(67, 97, 238, 0.05);
+      stroke-width: 28;
+      animation-duration: 26s;
+    }
+    
+    .wave4 {
+      stroke: rgba(58, 12, 163, 0.06);
+      stroke-width: 22;
+      animation-duration: 30s;
+      animation-direction: reverse;
+    }
+    
+    .wave5 {
+      stroke: rgba(67, 97, 238, 0.07);
+      stroke-width: 18;
+      animation-duration: 34s;
+    }
+    
+    .overlay {
+      position: absolute;
+      inset: 0;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+      opacity: 0.25;
+      background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.6) 40%, transparent 70%);
+    }
+    
+    .grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+      background-size: 3px 3px;
+      opacity: 0.5;
+    }
+    
+    @keyframes move {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Portfolio Styles */
     :root {
       --bg-primary: #ffffff;
       --bg-secondary: #f8f9fa;
@@ -23,6 +104,7 @@
       --warning-color: #f72585;
       --error-color: #e63946;
       --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+      --card-hover-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
       --font-main: 'Poppins', sans-serif;
       --transition-speed: 0.3s;
     }
@@ -39,6 +121,7 @@
       color: var(--text-primary);
       min-height: 100vh;
       line-height: 1.6;
+      position: relative;
     }
 
     /* Header & Navigation */
@@ -175,7 +258,7 @@
     .skills-list li {
       list-style: none;
       font-size: 16px;
-      color: var(--text-secondary);
+      color: var(--accent-color);
       background: rgba(67, 97, 238, 0.1);
       padding: 8px 15px;
       border-radius: 20px;
@@ -197,7 +280,7 @@
 
     .btn {
       padding: 12px 25px;
-      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      background: var(--accent-color);
       border: none;
       color: white;
       border-radius: 25px;
@@ -212,6 +295,7 @@
     .btn:hover {
       transform: scale(1.05);
       box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+      background: var(--accent-secondary);
     }
 
     .btn-outline {
@@ -222,6 +306,8 @@
 
     .btn-outline:hover {
       background: rgba(67, 97, 238, 0.1);
+      color: var(--accent-secondary);
+      border-color: var(--accent-secondary);
     }
 
     .social-icons {
@@ -242,7 +328,6 @@
       color: var(--accent-color);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
       transition: all var(--transition-speed);
-      border: 1px solid rgba(67, 97, 238, 0.1);
     }
 
     .social-icons a:hover {
@@ -272,13 +357,15 @@
 
     .hero-image:hover img {
       transform: scale(1.03);
+      box-shadow: var(--card-hover-shadow);
     }
 
     /* Portfolio Showcase */
     .showcase {
       padding: 100px 40px;
-      background: var(--bg-secondary);
+      background: rgba(248, 249, 250, 0.8);
       text-align: center;
+      backdrop-filter: blur(5px);
     }
 
     .section-title {
@@ -324,11 +411,11 @@
       cursor: pointer;
       transition: all var(--transition-speed);
       border-radius: 30px;
-      border: 1px solid rgba(67, 97, 238, 0.2);
+      border: 1px solid var(--bg-tertiary);
     }
 
     .tab-btn.active {
-      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      background: var(--accent-color);
       color: white;
       box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
       border: 1px solid transparent;
@@ -375,7 +462,7 @@
 
     .portfolio-item:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(67, 97, 238, 0.15);
+      box-shadow: var(--card-hover-shadow);
     }
 
     .portfolio-item img {
@@ -410,7 +497,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(67, 97, 238, 0.8);
+      background: rgba(0, 0, 0, 0.7);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -457,21 +544,21 @@
       border-radius: 30px;
       cursor: pointer;
       transition: all var(--transition-speed);
-      border: 1px solid rgba(67, 97, 238, 0.2);
+      border: 1px solid var(--bg-tertiary);
       color: var(--text-secondary);
     }
 
     .cert-category:hover {
       background: rgba(67, 97, 238, 0.1);
-      transform: translateY(-3px);
       color: var(--accent-color);
+      transform: translateY(-3px);
     }
 
     .cert-category.active {
-      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      background: var(--accent-color);
+      color: white;
       box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
       border: 1px solid transparent;
-      color: white;
     }
 
     /* Certificates Grid */
@@ -496,6 +583,7 @@
 
     .certificate-item:hover {
       transform: scale(1.03);
+      box-shadow: var(--card-hover-shadow);
     }
 
     .certificate-item img {
@@ -564,10 +652,12 @@
       font-size: 1.5rem;
       cursor: pointer;
       transition: transform var(--transition-speed);
+      z-index: 2001;
     }
 
     .close-viewer:hover {
       transform: rotate(90deg);
+      background: var(--accent-secondary);
     }
 
     .viewer-nav {
@@ -576,6 +666,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 30px;
+      z-index: 2001;
     }
 
     .viewer-nav button {
@@ -618,6 +709,7 @@
       border-radius: 20px;
       font-size: 14px;
       color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     /* Skills Section */
@@ -640,6 +732,7 @@
 
     .skill-category:hover {
       transform: translateY(-5px);
+      box-shadow: var(--card-hover-shadow);
     }
 
     .skill-category h3 {
@@ -661,7 +754,7 @@
     .skill-icon {
       width: 40px;
       height: 40px;
-      background: rgba(67, 97, 238, 0.1);
+      background: var(--bg-secondary);
       border-radius: 50%;
       display: flex;
       justify-content: center;
@@ -695,7 +788,7 @@
 
     .progress-fill {
       height: 100%;
-      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      background: var(--accent-color);
       border-radius: 4px;
       transition: width 1s ease-in-out;
     }
@@ -712,7 +805,8 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 40px;
-      background: var(--bg-secondary);
+      background: rgba(248, 249, 250, 0.8);
+      backdrop-filter: blur(5px);
     }
 
     .experience-item {
@@ -726,6 +820,7 @@
 
     .experience-item:hover {
       transform: translateY(-5px);
+      box-shadow: var(--card-hover-shadow);
     }
 
     .experience-header {
@@ -766,8 +861,9 @@
     /* Dashboard Section */
     .dashboard-section {
       padding: 80px 20px;
-      background: var(--bg-secondary);
+      background: rgba(248, 249, 250, 0.8);
       text-align: center;
+      backdrop-filter: blur(5px);
     }
 
     .dashboard-categories {
@@ -784,21 +880,21 @@
       border-radius: 30px;
       cursor: pointer;
       transition: all var(--transition-speed);
-      border: 1px solid rgba(67, 97, 238, 0.2);
+      border: 1px solid var(--bg-tertiary);
       color: var(--text-secondary);
     }
 
     .dashboard-category:hover {
       background: rgba(67, 97, 238, 0.1);
-      transform: translateY(-3px);
       color: var(--accent-color);
+      transform: translateY(-3px);
     }
 
     .dashboard-category.active {
-      background: linear-gradient(90deg, var(--accent-color), var(--accent-secondary));
+      background: var(--accent-color);
+      color: white;
       box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
       border: 1px solid transparent;
-      color: white;
     }
 
     /* Dashboard Grid */
@@ -823,13 +919,13 @@
 
     .dashboard-item:hover {
       transform: scale(1.03);
+      box-shadow: var(--card-hover-shadow);
     }
 
     .dashboard-item img {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-bottom: 1px solid var(--bg-tertiary);
     }
 
     .dashboard-content {
@@ -890,10 +986,12 @@
       font-size: 1.5rem;
       cursor: pointer;
       transition: transform var(--transition-speed);
+      z-index: 2001;
     }
 
     .close-dashboard-viewer:hover {
       transform: rotate(90deg);
+      background: var(--accent-secondary);
     }
 
     .dashboard-viewer-nav {
@@ -902,6 +1000,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 30px;
+      z-index: 2001;
     }
 
     .dashboard-viewer-nav button {
@@ -932,9 +1031,10 @@
 
     /* Footer */
     footer {
-      background: var(--bg-tertiary);
+      background: rgba(233, 236, 239, 0.8);
       padding: 60px 40px 30px;
       text-align: center;
+      backdrop-filter: blur(5px);
     }
 
     .footer-grid {
@@ -1004,6 +1104,7 @@
 
     .theme-toggle:hover {
       transform: scale(1.1);
+      background: var(--accent-secondary);
     }
 
     /* Project Details Modal */
@@ -1036,7 +1137,7 @@
       overflow-y: auto;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 0 30px rgba(67, 97, 238, 0.2);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
       position: relative;
     }
 
@@ -1052,6 +1153,11 @@
       border-radius: 50%;
       font-size: 1.2rem;
       cursor: pointer;
+      transition: background var(--transition-speed);
+    }
+
+    .close-project-modal:hover {
+      background: var(--accent-secondary);
     }
 
     .project-modal h2 {
@@ -1092,7 +1198,7 @@
       color: var(--text-primary);
       padding: 15px 25px;
       border-radius: 5px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       z-index: 3000;
       display: flex;
       align-items: center;
@@ -1100,7 +1206,7 @@
       transform: translateY(100px);
       opacity: 0;
       transition: all var(--transition-speed);
-      border-left: 5px solid var(--success-color);
+      border-left: 5px solid var(--accent-color);
     }
 
     .toast.show {
@@ -1109,15 +1215,15 @@
     }
 
     .toast.success {
-      border-left: 5px solid var(--success-color);
+      border-left-color: var(--success-color);
     }
 
     .toast.error {
-      border-left: 5px solid var(--error-color);
+      border-left-color: var(--error-color);
     }
 
     .toast.warning {
-      border-left: 5px solid var(--warning-color);
+      border-left-color: var(--warning-color);
     }
 
     /* Loading Spinner */
@@ -1239,6 +1345,11 @@
       .project-modal-links {
         flex-direction: column;
       }
+
+      .cert-categories, .dashboard-categories {
+        flex-direction: column;
+        align-items: center;
+      }
     }
     
     @media (max-width: 480px) {
@@ -1293,6 +1404,19 @@
   </style>
 </head>
 <body>
+  <!-- Wavy Background -->
+  <div class="wavy-background">
+    <svg viewBox="0 0 2880 900" preserveAspectRatio="xMidYMid slice" role="img">
+      <path class="wave wave1" d="M0 500 Q 360 420, 720 500 T 1440 500 T 2160 500 T 2880 500"/>
+      <path class="wave wave2" d="M0 540 Q 360 460, 720 540 T 1440 540 T 2160 540 T 2880 540"/>
+      <path class="wave wave3" d="M0 580 Q 360 500, 720 580 T 1440 580 T 2160 580 T 2880 580"/>
+      <path class="wave wave4" d="M0 620 Q 360 540, 720 620 T 1440 620 T 2160 620 T 2880 620"/>
+      <path class="wave wave5" d="M0 660 Q 360 580, 720 660 T 1440 660 T 2160 660 T 2880 660"/>
+    </svg>
+    <div class="overlay"></div>
+    <div class="grain"></div>
+  </div>
+
   <!-- Header -->
   <header id="header">
     <div class="logo" id="logo">Portfolio</div>
@@ -1856,7 +1980,7 @@
     <div class="dashboard-grid" id="dashboards-container">
       <!-- Excel Dashboards -->
       <div class="dashboard-item" data-dashboard-id="1" data-dashboard="excel">
-        <img src="dashboard/MOVIES Ex B.png" alt="Trending Movies Dashboard" loading="lazy">
+        <img src="dashboard/MOVIES Ex B.png" alt="Excel Basic Dashboard">
         <div class="dashboard-content">
           <h4>Trending Movies Dashboard</h4>
           <p>Discover a dynamic Trending Movies Dashboard showcasing movie popularity, top releases, and release trends from 1903 to 2024!</p>
@@ -1864,7 +1988,7 @@
       </div>
       
       <div class="dashboard-item" data-dashboard-id="2" data-dashboard="excel">
-        <img src="dashboard/T%MH Ex A1.png" alt="Tech & Mental Health Analytics Dashboard" loading="lazy">
+        <img src="dashboard/T%MH Ex A1.png" alt="Excel Advanced Dashboard 1">
         <div class="dashboard-content">
           <h4>Tech & Mental Health Analytics Dashboard</h4>
           <p>Dive into a detailed dashboard assessing the relationship between technology use and mental health.</p>
@@ -1872,40 +1996,40 @@
       </div>
       
       <div class="dashboard-item" data-dashboard-id="3" data-dashboard="excel">
-        <img src="dashboard/LH & W Ex A2.png" alt="Life Style Habits VS Well Being Dashboard" loading="lazy">
+        <img src="dashboard/LH & W Ex A2.png" alt="Excel Advanced Dashboard 2">
         <div class="dashboard-content">
-          <h4>Life Style Habits VS Well Being Dashboard</h4>
+          <h4>Lifestyle Habits vs Wellbeing Dashboard</h4>
           <p>Explore a comprehensive dashboard analyzing lifestyle habits and their impact on wellbeing.</p>
         </div>
       </div>
       
       <div class="dashboard-item" data-dashboard-id="4" data-dashboard="excel">
-        <img src="dashboard/CDW Ex A3.png" alt="Country Wise Digital Well Being Report Dashboard" loading="lazy">
+        <img src="dashboard/CDW Ex A3.png" alt="Excel Advanced Dashboard 3">
         <div class="dashboard-content">
-          <h4>Country Wise Digital Well Being Report Dashboard</h4>
+          <h4>Country Wise Digital Wellbeing Report</h4>
           <p>Uncover an insightful dashboard tracking digital wellbeing across countries.</p>
         </div>
       </div>
       
       <!-- Power BI Dashboards -->
       <div class="dashboard-item" data-dashboard-id="5" data-dashboard="powerbi">
-        <img src="dashboard/CRA A1.png" alt="Country Wise Retail Supply Chain Analysis Dashboard" loading="lazy">
+        <img src="dashboard/CRA A1.png" alt="Power BI Basic Dashboard 1">
         <div class="dashboard-content">
-          <h4>Country Wise Retail Supply Chain Analysis Dashboard</h4>
+          <h4>Retail Supply Chain Analysis Dashboard</h4>
           <p>Analyze monthly order trends, returns, profit by category, and regional sales distribution.</p>
         </div>
       </div>
       
       <div class="dashboard-item" data-dashboard-id="6" data-dashboard="powerbi">
-        <img src="dashboard/CRA A2.png" alt="Country Wise Retail Sales Analysis Dashboard" loading="lazy">
+        <img src="dashboard/CRA A2.png" alt="Basic Power BI Dashboard 2">
         <div class="dashboard-content">
-          <h4>Country Wise Retail Sales Analysis Dashboard</h4>
+          <h4>Country Wise Retail Sales Analysis</h4>
           <p>Explore updated monthly sales, profit, and regional performance metrics.</p>
         </div>
       </div>
       
       <div class="dashboard-item" data-dashboard-id="7" data-dashboard="powerbi">
-        <img src="dashboard/HRA.png" alt="HR Analytics Dashboard" loading="lazy">
+        <img src="dashboard/HRA.png" alt="Advanced Power BI Dashboard 1">
         <div class="dashboard-content">
           <h4>HR Analytics Dashboard</h4>
           <p>Visualize key HR metrics with insights into employee attrition and department-wise trends.</p>
@@ -1913,7 +2037,7 @@
       </div>
       
       <div class="dashboard-item" data-dashboard-id="8" data-dashboard="powerbi">
-        <img src="dashboard/AMain.png" alt="Integrated Healthcare Analytics Dashboard" loading="lazy">
+        <img src="dashboard/AMain.png" alt="Advanced Power BI Dashboard 2">
         <div class="dashboard-content">
           <h4>Integrated Healthcare Analytics Dashboard</h4>
           <p>Explore patient distribution, top diagnoses, and average ratings.</p>
@@ -1921,6 +2045,19 @@
       </div>
     </div>
   </section>
+
+  <!-- Dashboard Viewer -->
+  <div class="dashboard-viewer" id="dashboard-viewer">
+    <button class="close-dashboard-viewer" id="close-dashboard-viewer" aria-label="Close dashboard viewer">&times;</button>
+    <div class="dashboard-viewer-nav">
+      <button id="prev-dashboard" aria-label="Previous dashboard"><i class="fas fa-chevron-left"></i></button>
+      <button id="next-dashboard" aria-label="Next dashboard"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <img id="viewer-dashboard-image" src="" alt="Dashboard">
+    <div class="dashboard-viewer-details">
+      <h3 id="dashboard-viewer-title">Dashboard Title</h3>
+    </div>
+  </div>
 
   <!-- Experience Section -->
   <section class="experience-section" id="experience">
@@ -2016,20 +2153,6 @@
       <div class="certificate-skills" id="cert-skills">
         <!-- Skills will be loaded dynamically -->
       </div>
-    </div>
-  </div>
-
-  <!-- Dashboard Viewer -->
-  <div class="dashboard-viewer" id="dashboard-viewer">
-    <button class="close-dashboard-viewer" id="close-dashboard-viewer" aria-label="Close dashboard viewer">&times;</button>
-    <div class="dashboard-viewer-nav">
-      <button id="prev-dashboard" aria-label="Previous dashboard"><i class="fas fa-chevron-left"></i></button>
-      <button id="next-dashboard" aria-label="Next dashboard"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <img id="dashboard-viewer-image" src="" alt="Dashboard">
-    <div class="dashboard-viewer-details">
-      <h3 id="dashboard-viewer-title">Dashboard Title</h3>
-      <p id="dashboard-viewer-description">Dashboard description goes here.</p>
     </div>
   </div>
 
@@ -2413,9 +2536,8 @@
       // Dashboard viewer functionality
       const dashboardViewer = document.getElementById('dashboard-viewer');
       const closeDashboardViewer = document.getElementById('close-dashboard-viewer');
-      const dashboardViewerImage = document.getElementById('dashboard-viewer-image');
+      const viewerDashboardImage = document.getElementById('viewer-dashboard-image');
       const dashboardViewerTitle = document.getElementById('dashboard-viewer-title');
-      const dashboardViewerDescription = document.getElementById('dashboard-viewer-description');
       const prevDashboard = document.getElementById('prev-dashboard');
       const nextDashboard = document.getElementById('next-dashboard');
       
@@ -2426,43 +2548,35 @@
       const dashboardData = {
         1: {
           title: "Trending Movies Dashboard",
-          image: "dashboard/MOVIES Ex B.png",
-          description: "Discover a dynamic Trending Movies Dashboard showcasing movie popularity, top releases, and release trends from 1903 to 2024!"
+          image: "dashboard/MOVIES Ex B.png"
         },
         2: {
           title: "Tech & Mental Health Analytics Dashboard",
-          image: "dashboard/T%MH Ex A1.png",
-          description: "Dive into a detailed dashboard assessing the relationship between technology use and mental health, including average internet usage, social media activity, mental health index, depression scores, screen time by country, and device types."
+          image: "dashboard/T%MH Ex A1.png"
         },
         3: {
-          title: "Life Style Habits VS Well Being Dashboard",
-          image: "dashboard/LH & W Ex A2.png",
-          description: "Explore a comprehensive dashboard analyzing lifestyle habits and their impact on wellbeing, featuring average sleep hours, work stress, physical activity, anxiety levels, gender distribution, and control types."
+          title: "Lifestyle Habits vs Wellbeing Dashboard",
+          image: "dashboard/LH & W Ex A2.png"
         },
         4: {
-          title: "Country Wise Digital Well Being Report Dashboard",
-          image: "dashboard/CDW Ex A3.png",
-          description: "Uncover a insightful dashboard tracking digital wellbeing across countries, showcasing happiness scores, screen time, depression scores, work stress, device usage patterns, and the impact of digital detox on depression."
+          title: "Country Wise Digital Wellbeing Report",
+          image: "dashboard/CDW Ex A3.png"
         },
         5: {
-          title: "Country Wise Retail Supply Chain Analysis Dashboard",
-          image: "dashboard/CRA A1.png",
-          description: "Analyze monthly order trends, returns, profit by category, and regional sales distribution for a comprehensive supply chain overview."
+          title: "Retail Supply Chain Analysis Dashboard",
+          image: "dashboard/CRA A1.png"
         },
         6: {
-          title: "Country Wise Retail Sales Analysis Dashboard",
-          image: "dashboard/CRA A2.png",
-          description: "Explore updated monthly sales, profit, and regional performance metrics to assess retail supply chain efficiency and growth."
+          title: "Country Wise Retail Sales Analysis",
+          image: "dashboard/CRA A2.png"
         },
         7: {
           title: "HR Analytics Dashboard",
-          image: "dashboard/HRA.png",
-          description: "Visualize key HR metrics with insights into employee attrition, age distribution, job satisfaction, and department-wise trends for strategic workforce management."
+          image: "dashboard/HRA.png"
         },
         8: {
           title: "Integrated Healthcare Analytics Dashboard",
-          image: "dashboard/AMain.png",
-          description: "Explore patient distribution, top diagnoses, and average ratings through an interactive dashboard designed to enhance hospital performance insights."
+          image: "dashboard/AMain.png"
         }
       };
       
@@ -2509,9 +2623,8 @@
       function updateViewerDashboard(dashboardId) {
         const dashboard = dashboardData[dashboardId];
         if (dashboard) {
-          dashboardViewerImage.src = dashboard.image;
+          viewerDashboardImage.src = dashboard.image;
           dashboardViewerTitle.textContent = dashboard.title;
-          dashboardViewerDescription.textContent = dashboard.description;
         }
       }
       
