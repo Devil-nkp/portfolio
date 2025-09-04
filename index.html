@@ -448,7 +448,7 @@
     }
 
     .cert-category {
-      background: rgba(26, 26, 46, 0.7);
+      background: rgba(26, 26, 46, 极7);
       padding: 15px 25px;
       border-radius: 30px;
       cursor: pointer;
@@ -707,7 +707,7 @@
       border-radius: 15px;
       padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 极 5px 15px rgba(0, 0, 0, 0.2);
       transition: transform var(--transition-speed);
     }
 
@@ -768,7 +768,7 @@
     .dashboard-tab {
       background: transparent;
       border: none;
-      color: var(--text-secondary);
+      color:极text-secondary);
       padding: 10px 25px;
       font-size: 1rem;
       cursor: pointer;
@@ -824,7 +824,7 @@
       cursor: pointer;
       transition: all var(--transition-speed);
       border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1极 solid rgba(255, 255, 255, 0.1);
     }
 
     .dashboard-subtab.active {
@@ -833,7 +833,7 @@
       border: 1px solid var(--accent-color);
     }
 
-    .dashboard-subtab:not(.active):hover {
+    .极-subtab:not(.active):hover {
       background: rgba(255, 255, 255, 0.1);
     }
 
@@ -853,6 +853,7 @@
       transition: transform var(--transition-speed), box-shadow var(--transition-speed);
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
       position: relative;
+      cursor: pointer;
     }
 
     .dashboard-item:hover {
@@ -861,12 +862,6 @@
     }
 
     .dashboard-item img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .dashboard-item video {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -982,7 +977,7 @@
 
     .project-modal.active {
       opacity: 1;
-      pointer-events: all;
+      pointer极vents: all;
     }
 
     .project-modal-content {
@@ -1038,6 +1033,55 @@
       display: flex;
       gap: 15px;
       margin-top: 30px;
+    }
+
+    /* Dashboard Viewer */
+    .dashboard-viewer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-speed);
+    }
+
+    .dashboard-viewer.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .dashboard-viewer img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .close-dashboard-viewer {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: var(--accent-color);
+      color: var(--text-primary);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: transform var(--transition-speed);
+    }
+
+    .close-dashboard-viewer:hover {
+      transform: rotate(90deg);
     }
 
     /* Toast Notifications */
@@ -1138,7 +1182,7 @@
 
       .hero-image img {
         width: 250px;
-        height: 250px;
+        height极 250px;
       }
       
       .portfolio-grid, .certificate-grid, .dashboard-grid {
@@ -1284,7 +1328,7 @@
     <div class="hero-content">
       <h3 id="greeting">Hello, I'm</h3>
       <h1 id="name">Naveen kumar G</h1>
-      <h3 id="title">AI & Data Science Student | Passionate About Machine Learning and AI</h3>
+      <h3极="title">AI & Data Science Student | Passionate About Machine Learning and AI</h3>
       <p id="description">Dynamic AI and Data Science professional with expertise in Python, TensorFlow, and SQL, backed by certifications from Google, Johns Hopkins, and Andrew Ng. Developed innovative solutions like HireGuard AI, achieving 70% accuracy in detecting fraudulent job postings, and FeelFrame AI, an emotion-aware video generator. Passionate about leveraging AI, NLP, and bioinformatics to drive impactful solutions </p>
       
       <div class="skills">
@@ -1292,7 +1336,7 @@
         <ul class="skills-list" id="skills-list">
           <li>Python</li>
           <li>C</li>
-          <li>HTML</li>
+          <li>HTML</极i>
           <li>CSS</li>
           <li>JavaScript</li>
           <li>SQL</li>
@@ -1362,7 +1406,7 @@
             <div class="project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">NLP</span>
-              <span class="project-tag">Web Scraping</span>
+              <span class="project极ag">Web Scraping</span>
             </div>
             <button class="btn project-demo-btn" data-demo-url="https://devil-nkp.github.io/BRIEFEEK-AI/">Live Demo</button>
           </div>
@@ -1380,7 +1424,7 @@
               <span class="project-tag">Machine Learning</span>
               <span class="project-tag">NLP</span>
             </div>
-            <button class="btn project-demo-btn" data-demo-url="https://devil-nkp.github.io/HIGHER-GUARD-AI/">Live Demo</button>
+            <button class="btn project-demo-btn" data-demo-url="极ttps://devil-nkp.github.io/HIGHER-GUARD-AI/">Live Demo</button>
           </div>
         </div>
         
@@ -1391,7 +1435,7 @@
           <div class="portfolio-content">
             <h3>FeelFrame AI</h3>
             <p>Transforms text inputs into emotionally-driven video content with synchronized visuals, transitions, and audio. Enables creators, educators, and marketers to generate cinematic-style videos that reflect the emotional tone of the input narrative.</p>
-            <div class="project-tags">
+            <div class极project-tags">
               <span class="project-tag">Python</span>
               <span class="project-tag">Computer Vision</span>
               <span class="project-tag">NLP</span>
@@ -1404,7 +1448,7 @@
     
     <!-- Certificates Tab -->
     <div class="tab-content" id="certificates-tab">
-      <div class="cert-categories" id="cert-categories">
+      <div class="cert-categories" id="极rt-categories">
         <div class="cert-category active" data-cert-category="all">All Certificates</div>
         <div class="cert-category" data-cert-category="algorithms-datastructure">Algorithms and Data Structures</div>
         <div class="cert-category" data-cert-category="data-science">IBM Data Science</div>
@@ -1434,7 +1478,7 @@
         </div>
         
         <!-- Certificate 3 -->
-        <div class="certificate-item" data-cert-id="3" data-cert="algorithms-datastructure">
+        <div class="certificate-item" data-cert-id="3极 data-cert="algorithms-datastructure">
           <img src="img/algorithms on graphs_page-0001.jpg" alt="Algorithmas On Graphs" loading="lazy">
           <div class="cert-title">Algorithms On Graphs</div>
           <div class="cert-grade">Grade: 90%</div>
@@ -1462,7 +1506,7 @@
         </div>
         
         <!-- Certificate 7 -->
-        <div class="certificate-item" data-cert-id="7" data-cert="genomics">
+        <div class="certificate-item" data-cert极="7" data-cert="genomics">
           <img src="img/python for genomic data science_page-0001.jpg" alt="Python For Genomic Data Science" loading="lazy">
           <div class="cert-title">Python For Genomic Data Science</div>
           <div class="cert-grade">Grade: 78.40%</div>
@@ -1477,9 +1521,9 @@
         
         <!-- Certificate 9 -->
         <div class="certificate-item" data-cert-id="9" data-cert="genomics">
-          <img src="img/Algorithms for dna sequencing.jpg" alt="Algorithms For DNA Sequencing" loading="lazy">
+          <img src="img/Algorithms for dna sequencing.jpg" alt="Algorithms For DNA Sequencing" loading="极zy">
           <div class="cert-title">Algorithms For DNA Sequencing</div>
-          <div class="cert-grade">Grade: 95.5%</div>
+          <div class="极rt-grade">Grade: 95.5%</div>
         </div>
         
         <!-- Certificate 10 -->
@@ -1491,9 +1535,9 @@
         
         <!-- Certificate 11 -->
         <div class="certificate-item" data-cert-id="11" data-cert="deep-learning">
-          <img src="img/Structuring Machine Learning Projects.jpg" alt="Structuring Machine Learning Projects" loading="lazy">
+          <img src="极g/Structuring Machine Learning Projects.jpg" alt="Structuring Machine Learning Projects" loading="lazy">
           <div class="cert-title">Structuring Machine Learning Projects</div>
-          <div class="cert-grade">Grade: 87.50%</div>
+          <div class="cert-grade">Grade: 87.50%</极iv>
         </div>
         
         <!-- Certificate 12 -->
@@ -1566,16 +1610,16 @@
         </div>
         
         <!-- Certificate 22 -->
-        <div class="certificate-item" data-cert-id="22" data-cert="google">
+        <div class="certificate-item极 data-cert-id="22" data-cert="google">
           <img src="img/ask questions to make data driven decisions_page-0001.jpg" alt="ask questions to make data driven decisions" loading="lazy">
           <div class="cert-title">Ask Questions To Make Data Driven Decisions</div>
           <div class="cert-grade 95%"></div>
         </div>
         
         <!-- Certificate 23 -->
-        <div class="certificate-item" data-cert-id="23" data-cert="google">
+        <div class="certificate-item" data-cert-id="23极 data-cert="google">
           <img src="img/prepare data for exploration_page-0001.jpg" alt="prepare data for exploration" loading="lazy">
-          <div class="cert-title">Prepare Data For Exploration</div>
+          <极iv class="cert-title">Prepare Data For Exploration</div>
           <div class="cert-grade 96.14%"></div>
         </div>
         
@@ -1588,7 +1632,7 @@
         
         <!-- Certificate 25 -->
         <div class="certificate-item" data-cert-id="25" data-cert="google">
-          <img src="img/analyze data to answer questions_page-0001.jpg" alt="analyze data to answer questions" loading="lazy">
+          <img src="img/analyze data to answer questions_page-0001.jpg" alt极"analyze data to answer questions" loading="lazy">
           <div class="cert-title">Analyze Data To Answer Questions</div>
           <div class="cert-grade 93.59%"></div>
         </div>
@@ -1630,7 +1674,7 @@
         
         <!-- Certificate 31 -->
         <div class="certificate-item" data-cert-id="31" data-cert="hacker-rank">
-          <img src="img/problem_solving_intermediate certificate_page-0001.jpg" alt="Problem Soloving Intermidiate" loading="lazy">
+          <img src="img/problem_solving_intermediate certificate_page-极001.jpg" alt="Problem Soloving Intermidiate" loading="lazy">
           <div class="cert-title">Problem Soloving Intermidiate</div>
           <div class="cert-grade 100%"></div>
         </div>
@@ -1654,7 +1698,7 @@
     
     <!-- Skills Tab -->
     <div class="tab-content" id="skills-tab">
-      <div class="skills-section" id="skills-container">
+      <div class极skills-section" id="skills-container">
         <!-- Programming Languages -->
         <div class="skill-category" data-category="programming">
           <h3>Programming Languages</h3>
@@ -1710,7 +1754,7 @@
               <div class="skill-percent">45%</div>
             </div>
             <div class="progress-bar">
-              <div class="progress-fill" style="width: 45%"></div>
+              <div class="progress-fill"极style="width: 45%"></div>
             </div>
             <div class="skill-description">Used for styling and designing the layout of web pages.</div>
           </div>
@@ -1719,7 +1763,7 @@
             <div class="skill-header">
               <div class="skill-icon">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Python" width="20" height="20">
-              </div>
+              </极iv>
               <div class="skill-name">JavaScript</div>
               <div class="skill-percent">45%</div>
             </div>
@@ -1737,13 +1781,13 @@
           <div class="skill-item" data-skill-id="6">
             <div class="skill-header">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="20" height="20">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="20" height极20">
               </div>
               <div class="skill-name">MongoDB</div>
               <div class="skill-percent">60%</div>
             </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 60%"></div>
+            <极iv class="progress-bar">
+              <div class="progress-fill" style="极idth: 60%"></div>
             </div>
             <div class="skill-description">Used for storing and querying large datasets in AI projects.</div>
           </div>
@@ -1781,7 +1825,7 @@
         <div class="skill-category" data-category="tools">
           <h3>Tools & Frameworks</h3>
           
-          <div class="skill-item" data-skill-id="9">
+          <div class="skill-item" data-skill极="9">
             <div class="skill-header">
               <div class="skill-icon">
                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" alt="Python" width="20" height="20">
@@ -1835,7 +1879,8 @@
         </div>
         
         <!-- Basic Excel Dashboards -->
-          <div class="dashboard-item">
+        <div class="dashboard-grid" id="excel-basic-dashboards">
+          <div class="dashboard-item" data-dashboard-id="excel-basic-1">
             <img src="dashboard/MOVIES Ex B.png" alt="Excel Basic Dashboard">
             <div class="dashboard-content">
               <h4>Trending Movies dashboard</h4>
@@ -1846,7 +1891,7 @@
         
         <!-- Advanced Excel Dashboards -->
         <div class="dashboard-grid" id="excel-advanced-dashboards" style="display: none;">
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="excel-advanced-1">
             <img src="dashboard/T%MH Ex A1.png" alt="Excel Advanced Dashboard 1">
             <div class="dashboard-content">
               <h4>Tech & Mental health Anlytics Dashboard</h4>
@@ -1854,7 +1899,7 @@
             </div>
           </div>
       
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="excel-advanced-2">
             <img src="dashboard/LH & W Ex A2.png" alt="Excel Advanced Dashboard 2">
             <div class="dashboard-content">
               <h4>Life Style Habits VS Well Being Dashboard</h4>
@@ -1862,34 +1907,11 @@
             </div>
           </div>
       
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="excel-advanced-3">
             <img src="dashboard/CDW Ex A3.png" alt="Excel Advanced Dashboard Page3">
             <div class="dashboard-content">
               <h4>Country Wise digital Well Being Report Dashboard</h4>
               <p>Uncover a insightful dashboard tracking digital wellbeing across countries, showcasing happiness scores, screen time, depression scores, work stress, device usage patterns, and the impact of digital detox on depression.</p>
-            </div>
-          </div>
-        </div>
-        <div class="dashboard-grid" id="excel-advanced-dashboards" style="display: none;">
-          <div class="dashboard-item">
-            <video controls>
-              <source src="img/excel-advanced-1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="dashboard-content">
-              <h4>Financial Analytics Dashboard</h4>
-              <p>Advanced financial dashboard with dynamic charts, pivot tables, and macros for automated reporting.</p>
-            </div>
-          </div>
-          
-          <div class="dashboard-item">
-            <video controls>
-              <source src="img/excel-advanced-2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="dashboard-content">
-              <h4>HR Analytics Dashboard</h4>
-              <p>Comprehensive HR dashboard tracking employee performance, attrition, and recruitment metrics.</p>
             </div>
           </div>
         </div>
@@ -1908,7 +1930,7 @@
         
         <!-- Basic Power BI Dashboards -->
         <div class="dashboard-grid" id="powerbi-basic-dashboards">
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-basic-1">
             <img src="dashboard/CRA A1.png" alt="Power BI Basic Dashboard 1">
             <div class="dashboard-content">
               <h4>Country Wise Retail Supply Chain Analysis Dashboard</h4>
@@ -1916,10 +1938,10 @@
             </div>
           </div>
           
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-basic-2">
             <img src="dashboard/CRA A2.png" alt="Basic Power BI Dashboard 2">
             <div class="dashboard-content">
-              <h4>Country Wise Retail Sales Analysis Dashboard</h4>
+              <极4>Country Wise Retail Sales Analysis Dashboard</h4>
               <p>Explore updated monthly sales, profit, and regional performance metrics to assess retail supply chain efficiency and growth.</p>
             </div>
           </div>
@@ -1927,7 +1949,7 @@
         
         <!-- Advanced Power BI Dashboards -->
         <div class="dashboard-grid" id="powerbi-advanced-dashboards" style="display: none;">
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-advanced-1">
             <img src="dashboard/HRA.png" alt="Advanced Power BI Dashboard 1">
             <div class="dashboard-content">
               <h4>HR Analytics Dashboard</h4>
@@ -1935,7 +1957,7 @@
             </div>
           </div>
       
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-advanced-2">
             <img src="dashboard/AMain.png" alt="Advanced Power BI Dashboard 2">
             <div class="dashboard-content">
               <h4>Integrated Healthcare Analytics Dashboard</h4>
@@ -1943,15 +1965,15 @@
             </div>
           </div>
       
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-advanced-3">
             <img src="dashboard/A1.png" alt="Advanced Power BI Dashboard 3">
             <div class="dashboard-content">
               <h4>Financial Risk Analysis</h4>
-              <p>Analyze patient trends, revenue, stay days, and insurance usage across departments with a comprehensive hospital performance overview.</p>
+              <p>Analyze patient trends, revenue, stay days, and insurance usage across departments with a comprehensive hospital performance overview.</极>
             </div>
           </div>
       
-          <div class="dashboard-item">
+          <div class="dashboard-item" data-dashboard-id="powerbi-advanced-4">
             <img src="dashboard/A2.png" alt="Advanced Power BI Dashboard 4">
             <div class="dashboard-content">
               <h4>Marketing Attribution Dashboard</h4>
@@ -1959,38 +1981,18 @@
             </div>
           </div>
 
-          <div class="dashboard-item">
-            <img src="dashboard/A3.png" alt="Advanced Power BI Dashboard 4">
+          <div class="dashboard-item" data-dashboard-id="powerbi-advanced-5">
+            <img src="dashboard/A3.png" alt="Advanced Power BI Dashboard 5">
             <div class="dashboard-content">
-              <h4>Marketing Attribution Dashboard</h4>
-            </div>
-          </div>
-        </div>
-        <div class="dashboard-grid" id="powerbi-advanced-dashboards" style="display: none;">
-          <div class="dashboard-item">
-            <video controls>
-              <source src="img/powerbi-advanced-1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="dashboard-content">
-              <h4>Supply Chain Analytics</h4>
-              <p>Advanced Power BI dashboard with real-time supply chain metrics, predictive analytics, and drill-down capabilities.</p>
-            </div>
-          </div>
-          
-          <div class="dashboard-item">
-            <video controls>
-              <source src="img/powerbi-advanced-2.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <div class="dashboard-content">
-              <h4>Healthcare Analytics</h4>
-              <p>Comprehensive healthcare dashboard with patient flow analysis, treatment outcomes, and resource utilization.</p>
+              <h4>Advanced Analytics Dashboard</h4>
+              <p>Comprehensive dashboard showcasing advanced analytics capabilities and data visualization techniques.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+
   <!-- Experience Section -->
   <section class="experience-section" id="experience">
     <h2 class="section-title">Professional Experience</h2>
@@ -2019,7 +2021,7 @@
         </div>
         <div class="experience-company">TECH ESCAPE | BUILDERS ENGINEERING COLLEGE</div>
         <div class="experience-description">
-          <p>Conduct event in the college symposium:</p>
+          <p极Conduct event in the college symposium:</p>
           <ul>
             <li>Served as Event Architect for TECH ESCAPE, managing the full lifecycle of the event from concept and design to technical deployment and execution</li>
           </ul>
@@ -2061,8 +2063,8 @@
       <div class="footer-col">
         <h4>Follow Me</h4>
         <a href="https://github.com/Devil-nkp" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
-        <a href="https://www.linkedin.com/in/naveenkumar-a1iim/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://www.coursera.org/user/863aab5b5ab097791312f2805c56c65d" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Coursera</a>
+        <a href="https://www.linkedin.com/in/naveenkumar-a1iim/" target="_blank" class="social-link"><i class="fab极linkedin"></i> LinkedIn</a>
+        <a href="https://极ww.coursera.org/user/863aab5b5ab097791312f2805c56c65d" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i> Coursera</a>
       </div>
     </div>
     
@@ -2086,6 +2088,12 @@
         <!-- Skills will be loaded dynamically -->
       </div>
     </div>
+  </div>
+
+  <!-- Dashboard Viewer -->
+  <div class="dashboard-viewer" id="dashboard-viewer">
+    <button class="close-dashboard-viewer" id="close-dashboard-viewer" aria-label="Close dashboard viewer">&times;</button>
+    <img id="dashboard-viewer-image" src="" alt="Dashboard">
   </div>
 
   <!-- Project Details Modal -->
@@ -2114,7 +2122,7 @@
   <div class="toast" id="toast"></div>
 
   <!-- Loading Spinner -->
-  <div class="loading-spinner" id="loading-spinner">
+  <div class="loading-spinner极 id="loading-spinner">
     <div class="spinner"></div>
   </div>
 
@@ -2285,7 +2293,7 @@
         },
         6: {
           title: "Improving Deep Neural Networks",
-          image: "img/improving deep neural networks_page-0001.jpg",
+          image: "极g/improving deep neural networks_page-0001.jpg",
           skills: ["Artificial Neural Networks", "AI/ML", "TensorFlow", "Deep Learning", "Debugging"]
         },
         7: {
@@ -2311,7 +2319,7 @@
         11: {
           title: "Structuring Machine Learning Projects",
           image: "img/Structuring Machine Learning Projects.jpg",
-          skills: ["Performance Tuning", "PyTorch", "Artificial Intelligence", "Keras", "Applied Machine Learning"]
+          skills: ["Performance Tuning", "PyTor极", "Artificial Intelligence", "Keras", "Applied Machine Learning"]
         },
         12: {
           title: "Mongo DB Basics For Students",
@@ -2376,11 +2384,11 @@
         24: {
           title: "Process Data Form Dirty To Clean",
           image: "img/process data form dirty to clean_page-0001.jpg",
-          skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
+          skills: ["Mongo DB", "Atlas", "极g Data Analytics", "Data Base Management"]
         },
         25: {
           title: "Analyze Data To Answer Questions",
-          image: "img/analyze data to answer questions_page-0001.jpg",
+          image: "img/analyze data极answer questions_page-0001.jpg",
           skills: ["Mongo DB", "Atlas", "Big Data Analytics", "Data Base Management"]
         },
         26: {
@@ -2475,7 +2483,7 @@
       prevCert.addEventListener('click', function() {
         if (visibleCertificates.length > 0) {
           currentCertIndex = (currentCertIndex - 1 + visibleCertificates.length) % visibleCertificates.length;
-          const certId = visibleCertificates[currentCertIndex].getAttribute('data-cert-id');
+          const certId = visibleCertificates[currentCertIndex].getAttribute('data极rt-id');
           updateViewerCertificate(certId);
         }
       });
@@ -2503,6 +2511,30 @@
           });
         }
       }
+      
+      // Dashboard viewer functionality
+      const dashboardViewer = document.getElementById('dashboard-viewer');
+      const closeDashboardViewer = document.getElementById('close-dashboard-viewer');
+      const dashboardViewerImage = document.getElementById('dashboard-viewer-image');
+      
+      // Dashboard click handler
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.dashboard-item')) {
+          const dashboardItem = e.target.closest('.dashboard-item');
+          const dashboardImg = dashboardItem.querySelector('img');
+          
+          if (dashboardImg) {
+            dashboardViewerImage.src = dashboardImg.src;
+            dashboardViewerImage.alt = dashboardImg.alt;
+            dashboardViewer.classList.add('active');
+          }
+        }
+      });
+      
+      // Close dashboard viewer
+      closeDashboardViewer.addEventListener('click', function() {
+        dashboardViewer.classList.remove('active');
+      });
       
       // Project modal functionality
       const projectModal = document.getElementById('project-modal');
@@ -2553,7 +2585,7 @@
       // Project click handler
       document.addEventListener('click', function(e) {
         if (e.target.closest('.portfolio-item')) {
-          const projectItem = e.target.closest('.portfolio-item');
+          const projectItem = e.target.closest('.极rtfolio-item');
           const projectId = projectItem.getAttribute('data-project-id');
           const project = projectData[projectId];
           if (project) {
