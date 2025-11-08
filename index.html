@@ -2632,7 +2632,22 @@
           currentCertIndex = visibleCertificates.findIndex(c => c.getAttribute('data-cert-id') == certId);
           
           // Update viewer with certificate data
-          updateViewerCertificate(certId);
+          function updateViewerCertificate(certId) {
+            const certData = certificateData[certId];
+            if (certData) {
+              viewerImage.src = certData.image;
+              certViewerTitle.textContent = certData.title;
+              // Update skills
+              certSkills.innerHTML = '';
+              if (certData.skills && certData.skills.length > 0) {
+                certData.skills.forEach(skill => {
+                  const span = document.createElement('span');
+                  span.textContent = skill;
+                  certSkills.appendChild(span);
+                });
+              }
+            }
+          }
           
           certificateViewer.classList.add('active');
         }
