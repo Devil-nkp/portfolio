@@ -2580,43 +2580,53 @@
         },
         34: {
           title: "Microsoft Office Essentials",
-          image: "img/NM_Certificate (2)_page-0001.jpg"
+          image: "img/NM_Certificate (2)_page-0001.jpg",
+          skills: ["Microsoft Office", "Productivity Tools", "Document Management"]
         },
         35: {
-          title: "Experienced based Project Learning",
-          image: "img/NM_Certificate (3)_page-0001.jpg"
+          title: "Experience Based Project Learning",
+          image: "img/NM_Certificate (3)_page-0001.jpg",
+          skills: ["Project Management", "Practical Application", "Problem Solving"]
         },
         36: {
-          title: "AI FOUNDATIONS ASSOSIATIVE",
-          image: "Oracle/AI FOUNDATIONS ASSOSIATE_page-0001.jpg"
+          title: "AI FOUNDATIONS ASSOCIATE",
+          image: "Oracle/AI FOUNDATIONS ASSOSIATE_page-0001.jpg",
+          skills: ["Artificial Intelligence", "Machine Learning", "AI Fundamentals"]
         },
         37: {
           title: "GEN AI PROFESSIONAL CERTIFICATE",
-          image: "Oracle/GEN AI PROFESSIONAL_page-0001.jpg"
+          image: "Oracle/GEN AI PROFESSIONAL_page-0001.jpg",
+          skills: ["Generative AI", "AI Applications", "Advanced AI Concepts"]
         },
         38: {
           title: "DATA SCIENCE PROFESSIONAL CERTIFICATE",
-          image: "Oracle/DATA SCIENCE PROFESSIONAL_page-0001.jpg"
+          image: "Oracle/DATA SCIENCE PROFESSIONAL_page-0001.jpg",
+          skills: ["Data Science", "Analytics", "Statistical Modeling"]
         },
         39: {
           title: "AI FOUNDATIONS PROFESSIONAL BADGE",
-          image: "Oracle/OCI25AICFA.jpeg"
+          image: "Oracle/OCI25AICFA.jpeg",
+          skills: ["AI Foundations","AI Skills"]
         },
         40: {
           title: "GEN AI PROFESSIONAL BADGE",
-          image: "Oracle/OCI25GAIOCP.jpg"
+          image: "Oracle/OCI25GAIOCP.jpg",
+          skills: ["Generative AI","AI Implementation"]
         },
         41: {
           title: "DATA SCIENCE PROFESSIONAL BADGE",
-          image: "Oracle/OCI25DSOCP.jpg"
+          image: "Oracle/OCI25DSOCP.jpg",
+          skills: ["Data Science"]
         },
         42: {
-          title: "ORACLE RACE CERTFICATION",
-          image: "Oracle/Zoom-BG_Level1.jpg"
+          title: "ORACLE RACE CERTIFICATION",
+          image: "Oracle/Zoom-BG_Level1.jpg",
+          skills: ["Oracle Certification"]
         },
         43: {
-          title: "ORACLE RACE CERTFICATION",
-          image: "Oracle/Zoom-BG_Level2.jpg"
+          title: "ORACLE RACE CERTIFICATION",
+          image: "Oracle/Zoom-BG_Level2.jpg",
+          skills: ["Data process Skills", "Database handling"]
         }
       };
       
@@ -2632,22 +2642,7 @@
           currentCertIndex = visibleCertificates.findIndex(c => c.getAttribute('data-cert-id') == certId);
           
           // Update viewer with certificate data
-          function updateViewerCertificate(certId) {
-            const certData = certificateData[certId];
-            if (certData) {
-              viewerImage.src = certData.image;
-              certViewerTitle.textContent = certData.title;
-              // Update skills
-              certSkills.innerHTML = '';
-              if (certData.skills && certData.skills.length > 0) {
-                certData.skills.forEach(skill => {
-                  const span = document.createElement('span');
-                  span.textContent = skill;
-                  certSkills.appendChild(span);
-                });
-              }
-            }
-          }
+          updateViewerCertificate(certId);
           
           certificateViewer.classList.add('active');
         }
